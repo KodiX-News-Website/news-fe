@@ -8,10 +8,15 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { validationScheme } from "./validationScheme";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/enums";
+import { toast } from "react-toastify";
+import { useAppDispatch } from "@/hooks";
+import { createUserRequest } from "@/redux/slices/userSlice/userSlice";
 
 type FormData = yup.InferType<ReturnType<typeof validationScheme>>;
 
 export default function SignUpPage() {
+  const dispatch = useAppDispatch();
+
   const defaultValues: FormData = {
     email: "",
     firstName: "",
@@ -26,7 +31,14 @@ export default function SignUpPage() {
   });
 
   const handleFormSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
+    const toastId = toast.loading("Waiting...");
+
+    dispatch(
+      createUserRequest({
+        data,
+        toastId,
+      })
+    );
   };
 
   return (
@@ -41,7 +53,9 @@ export default function SignUpPage() {
         height: "100vh",
       }}
     >
-      <LogoIcon sx={{ mb: 5 }} />
+      <Link to={ROUTES.HOME}>
+        <LogoIcon sx={{ mb: 5 }} />
+      </Link>
 
       <Box
         sx={{
