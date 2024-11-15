@@ -9,6 +9,8 @@ import { Loader } from "@/components";
 import BlogPage from "@/pages/BlogPage/BlogPage";
 import PostDetailsPage from "@/pages/PostDetailsPage/PostDetailsPage";
 import HomePage from "@/pages/HomePage/HomePage";
+import FeaturePage from "@/pages/FeaturePage/FeaturePage";
+import TestimonialsPage from "@/pages/TestimonialsPage/TestimonialsPage";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,22 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loader />}>
             <PostDetailsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.FEATURE,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <FeaturePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.TESTIMONIALS,
+        element: (
+          <Suspense fallback={<Loader />}>
+            <TestimonialsPage />
           </Suspense>
         ),
       },

@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Header } from "./components";
+import { Circle, Header } from "./components";
 import { Outlet } from "react-router-dom";
 
 export default function Layout() {
@@ -9,9 +9,13 @@ export default function Layout() {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
+        position: "relative",
+        overflowX: "hidden",
       }}
     >
       <Header />
+      <Circle width={545} height={573} top="112px" left="1200px" />
+      <Circle width={735} height={772} top="238px" left="-404px" />
       <Box
         component="main"
         sx={{
@@ -20,7 +24,7 @@ export default function Layout() {
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
-          padding: "10px 15px",
+          padding: "0 45px",
         }}
       >
         <Outlet />
