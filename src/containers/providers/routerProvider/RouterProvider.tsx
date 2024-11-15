@@ -11,6 +11,8 @@ import PostDetailsPage from "@/pages/PostDetailsPage/PostDetailsPage";
 import HomePage from "@/pages/HomePage/HomePage";
 import FeaturePage from "@/pages/FeaturePage/FeaturePage";
 import TestimonialsPage from "@/pages/TestimonialsPage/TestimonialsPage";
+import SignInPage from "@/pages/SignInPage/SignInPage";
+import SignUpPage from "@/pages/SignUpPage/SignUpPage";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +69,22 @@ const router = createBrowserRouter([
         element: <Suspense fallback={<Loader />}>404 Not Found</Suspense>,
       },
     ],
+  },
+  {
+    path: ROUTES.SIGN_IN,
+    element: (
+      <Suspense fallback={<Loader />}>
+        <SignInPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: ROUTES.SIGN_UP,
+    element: (
+      <Suspense fallback={<Loader />}>
+        <SignUpPage />
+      </Suspense>
+    ),
   },
 ]);
 
