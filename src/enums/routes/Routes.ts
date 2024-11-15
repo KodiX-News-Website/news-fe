@@ -5,4 +5,6 @@ export enum ROUTES {
   BLOG = "/blog",
   POST_DETAILS = "/post/:id",
   NOT_FOUND = "/not-found",
+  FEATURE = "/feature",
+  TESTIMONIALS = "/testimonials",
 }

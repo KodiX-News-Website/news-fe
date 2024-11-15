@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-export default function HomePage() {
+export default function TestimonialsPage() {
   return (
     <Box
       sx={{
@@ -11,7 +11,7 @@ export default function HomePage() {
         flexGrow: 1,
       }}
     >
-      Home Page
+      Testimonials Page
     </Box>
   );
 }
