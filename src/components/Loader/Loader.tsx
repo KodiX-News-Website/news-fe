@@ -1,5 +1,5 @@
 import { Box, CircularProgress } from "@mui/material";
-import theme from "../../styles/muiTheme";
+import theme from "@/styles/muiTheme";
 
 export const Loader = () => (
   <Box

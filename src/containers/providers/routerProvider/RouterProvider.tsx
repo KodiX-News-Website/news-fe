@@ -3,12 +3,12 @@ import {
   createBrowserRouter,
   RouterProvider as Provider,
 } from "react-router-dom";
-import Layout from "../../../Layout";
-import { ROUTES } from "../../../enums";
-import { Loader } from "../../../components";
-import BlogPage from "../../../pages/BlogPage/BlogPage";
-import PostDetailsPage from "../../../pages/PostDetailsPage/PostDetailsPage";
-import HomePage from "../../../pages/HomePage/HomePage";
+import Layout from "@/Layout";
+import { ROUTES } from "@/enums";
+import { Loader } from "@/components";
+import BlogPage from "@/pages/BlogPage/BlogPage";
+import PostDetailsPage from "@/pages/PostDetailsPage/PostDetailsPage";
+import HomePage from "@/pages/HomePage/HomePage";
 
 const router = createBrowserRouter([
   {

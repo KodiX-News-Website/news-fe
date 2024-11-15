@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import theme from "../../styles/muiTheme";
+import theme from "@/styles/muiTheme";
 
 export const Header = () => {
   return (
