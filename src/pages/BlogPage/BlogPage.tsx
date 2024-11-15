@@ -166,6 +166,7 @@ export default function BlogPage() {
           gap: 2.5,
           p: 2.5,
           border: "1px solid #D6D6D6",
+          overflowX: "auto",
         }}
       >
         <Card />
