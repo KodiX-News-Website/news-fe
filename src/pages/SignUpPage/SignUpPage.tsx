@@ -173,6 +173,7 @@ export default function SignUpPage() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            borderRadius: "0 8px 8px 0",
             px: 4,
             py: 2,
             backgroundColor: theme.palette.common.black,

@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import {
   createBrowserRouter,
   RouterProvider as Provider,
@@ -6,13 +6,18 @@ import {
 import Layout from "@/Layout";
 import { ROUTES } from "@/enums";
 import { AuthGuard, Loader } from "@/components";
-import BlogPage from "@/pages/BlogPage/BlogPage";
-import PostDetailsPage from "@/pages/PostDetailsPage/PostDetailsPage";
-import HomePage from "@/pages/HomePage/HomePage";
-import FeaturePage from "@/pages/FeaturePage/FeaturePage";
-import TestimonialsPage from "@/pages/TestimonialsPage/TestimonialsPage";
-import SignInPage from "@/pages/SignInPage/SignInPage";
-import SignUpPage from "@/pages/SignUpPage/SignUpPage";
+
+const BlogPage = lazy(() => import("@/pages/BlogPage/BlogPage"));
+const PostDetailsPage = lazy(
+  () => import("@/pages/PostDetailsPage/PostDetailsPage")
+);
+const HomePage = lazy(() => import("@/pages/HomePage/HomePage"));
+const FeaturePage = lazy(() => import("@/pages/FeaturePage/FeaturePage"));
+const TestimonialsPage = lazy(
+  () => import("@/pages/TestimonialsPage/TestimonialsPage")
+);
+const SignInPage = lazy(() => import("@/pages/SignInPage/SignInPage"));
+const SignUpPage = lazy(() => import("@/pages/SignUpPage/SignUpPage"));
 
 const router = createBrowserRouter([
   {
