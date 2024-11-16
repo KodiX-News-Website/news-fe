@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Layout from "@/Layout";
 import { ROUTES } from "@/enums";
-import { Loader } from "@/components";
+import { AuthGuard, Loader } from "@/components";
 import BlogPage from "@/pages/BlogPage/BlogPage";
 import PostDetailsPage from "@/pages/PostDetailsPage/PostDetailsPage";
 import HomePage from "@/pages/HomePage/HomePage";
@@ -43,9 +43,11 @@ const router = createBrowserRouter([
       {
         path: ROUTES.POST_DETAILS,
         element: (
-          <Suspense fallback={<Loader />}>
-            <PostDetailsPage />
-          </Suspense>
+          <AuthGuard>
+            <Suspense fallback={<Loader />}>
+              <PostDetailsPage />
+            </Suspense>
+          </AuthGuard>
         ),
       },
       {
@@ -73,17 +75,21 @@ const router = createBrowserRouter([
   {
     path: ROUTES.SIGN_IN,
     element: (
-      <Suspense fallback={<Loader />}>
-        <SignInPage />
-      </Suspense>
+      <AuthGuard invert>
+        <Suspense fallback={<Loader />}>
+          <SignInPage />
+        </Suspense>
+      </AuthGuard>
     ),
   },
   {
     path: ROUTES.SIGN_UP,
     element: (
-      <Suspense fallback={<Loader />}>
-        <SignUpPage />
-      </Suspense>
+      <AuthGuard invert>
+        <Suspense fallback={<Loader />}>
+          <SignUpPage />
+        </Suspense>
+      </AuthGuard>
     ),
   },
 ]);
