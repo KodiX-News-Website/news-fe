@@ -7,8 +7,18 @@ import {
 import { Box, Typography } from "@mui/material";
 import theme from "@/styles/muiTheme";
 import { Card } from "@/components";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+import { getPostsRequest } from "@/redux/slices/postSlice/postSlice";
 
 export default function BlogPage() {
+  const dispatch = useAppDispatch();
+  const posts = useAppSelector((state) => state.postSlice.posts);
+
+  useEffect(() => {
+    dispatch(getPostsRequest());
+  }, []);
+
   return (
     <Box
       sx={{
@@ -169,11 +179,9 @@ export default function BlogPage() {
           overflowX: "auto",
         }}
       >
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {posts.map((post) => (
+          <Card key={post.id} post={post} />
+        ))}
       </Box>
     </Box>
   );

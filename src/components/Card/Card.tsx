@@ -1,9 +1,29 @@
 import { truncate } from "@/utils";
 import { Box, Typography } from "@mui/material";
 import theme from "@/styles/muiTheme";
+import { Post } from "@/types";
+import { Link } from "react-router-dom";
 
-export const Card = () => (
-  <Box sx={{ display: "flex", flexDirection: "column", maxWidth: "244px" }}>
+interface CardProps {
+  post: Post;
+}
+
+export const Card = ({ post }: CardProps) => (
+  <Box
+    component={Link}
+    to={`/blog/post/${post.id}`}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      maxWidth: "244px",
+      transition: "all 0.3s ease",
+
+      "&:hover": {
+        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        transform: "scale(1.05)",
+      },
+    }}
+  >
     <Box
       sx={{
         width: "244px",
@@ -41,7 +61,7 @@ export const Card = () => (
             letterSpacing: "-0.05em",
           }}
         >
-          A Journey into the Beauty and Majesty of Our Planet
+          {post.title}
         </Typography>
         <Typography
           variant="body1"
@@ -53,10 +73,7 @@ export const Card = () => (
             letterSpacing: "-0.05em",
           }}
         >
-          {truncate(
-            "Exploring breakthrough innovations, emerging technologies, and the impact of digital transformation on society",
-            38
-          )}
+          {truncate(post.body, 38)}
         </Typography>
       </Box>
     </Box>

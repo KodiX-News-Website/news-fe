@@ -24,7 +24,10 @@ export const userSlice = createSlice({
       state.isLoading = true;
       state.error = action.payload;
     },
-    loginRequest: (state, _action: PayloadAction<{ data: LoginUser; toastId: Id }>) => {
+    loginRequest: (
+      state,
+      _action: PayloadAction<{ data: LoginUser; toastId: Id }>
+    ) => {
       state.isLoading = true;
       state.error = "";
     },
