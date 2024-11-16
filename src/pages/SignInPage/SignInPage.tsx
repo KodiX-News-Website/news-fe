@@ -146,6 +146,7 @@ export default function SignInPage() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            borderRadius: "0 8px 8px 0",
             px: 5.1,
             backgroundColor: theme.palette.common.black,
             color: theme.palette.common.white,

@@ -5,3 +5,4 @@ export { default as TwitterIcon } from "./TwitterIcon";
 export { default as YoutubeIcon } from "./YoutubeIcon";
 export { default as EyeIcon } from "./EyeIcon";
 export { default as ArrowIcon } from "./ArrowIcon";
+export { default as DocumentIcon } from "./DocumentIcon";
