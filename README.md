@@ -1,3 +1,5 @@
+🚨I will share .env file with HR🚨
+
 Design - https://www.figma.com/design/WGFEiMy1UMUQqQA03Kgl4q/Test-Full-Stack?node-id=0-1&node-type=canvas&t=p9hzkJlfnO57ctjY-0
 
 ## Technologies/libraries that were used:
